@@ -1,0 +1,691 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Jan  4 08:20:46 2020
+# Process ID: 30920
+# Current directory: C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.runs/synth_1/top.vds
+# Journal file: C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: synth_design -top top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 7636 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 700.660 ; gain = 177.742
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/top.v:4]
+INFO: [Synth 8-6157] synthesizing module 'mouse' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/Mouse.v:1]
+INFO: [Synth 8-638] synthesizing module 'MouseCtl' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/MouseCtl.vhd:209]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 108000000 - type: integer 
+	Parameter CHECK_PERIOD_MS bound to: 500 - type: integer 
+	Parameter TIMEOUT_PERIOD_MS bound to: 100 - type: integer 
+INFO: [Synth 8-3491] module 'Ps2Interface' declared at 'C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/Ps2Interface.vhd:152' bound to instance 'Inst_Ps2Interface' of component 'Ps2Interface' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/MouseCtl.vhd:371]
+INFO: [Synth 8-638] synthesizing module 'Ps2Interface' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/Ps2Interface.vhd:180]
+INFO: [Synth 8-256] done synthesizing module 'Ps2Interface' (1#1) [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/Ps2Interface.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element inc_reg was removed.  [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/MouseCtl.vhd:452]
+WARNING: [Synth 8-6014] Unused sequential element x_inter_reg was removed.  [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/MouseCtl.vhd:458]
+WARNING: [Synth 8-6014] Unused sequential element inc_reg was removed.  [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/MouseCtl.vhd:516]
+WARNING: [Synth 8-6014] Unused sequential element y_inter_reg was removed.  [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/MouseCtl.vhd:522]
+INFO: [Synth 8-256] done synthesizing module 'MouseCtl' (2#1) [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/MouseCtl.vhd:209]
+WARNING: [Synth 8-689] width (10) of port connection 'xpos' does not match port width (12) of module 'MouseCtl' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/Mouse.v:71]
+WARNING: [Synth 8-689] width (10) of port connection 'ypos' does not match port width (12) of module 'MouseCtl' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/Mouse.v:72]
+INFO: [Synth 8-6157] synthesizing module 'SquareDisplay' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/Mouse.v:115]
+INFO: [Synth 8-6155] done synthesizing module 'SquareDisplay' (3#1) [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/Mouse.v:115]
+INFO: [Synth 8-6155] done synthesizing module 'mouse' (4#1) [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/Mouse.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ball' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/ball.v:7]
+	Parameter RESET bound to: 2'b01 
+	Parameter MOVE bound to: 2'b10 
+	Parameter COLLISION bound to: 2'b11 
+INFO: [Synth 8-6157] synthesizing module 'CollisionWithPlayerDectector' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/ball.v:206]
+INFO: [Synth 8-6155] done synthesizing module 'CollisionWithPlayerDectector' (5#1) [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/ball.v:206]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/ball.v:91]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/ball.v:131]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/ball.v:139]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/ball.v:114]
+INFO: [Synth 8-6155] done synthesizing module 'ball' (6#1) [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/ball.v:7]
+WARNING: [Synth 8-689] width (1) of port connection 'pixel' does not match port width (12) of module 'ball' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/top.v:107]
+INFO: [Synth 8-6157] synthesizing module 'ble_paddle' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/paddle.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'ble_paddle' (7#1) [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/paddle.v:25]
+WARNING: [Synth 8-689] width (1) of port connection 'pixel' does not match port width (12) of module 'ble_paddle' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/top.v:133]
+INFO: [Synth 8-6157] synthesizing module 'clock_divisor' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/clock_divisor.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divisor' (8#1) [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/clock_divisor.v:1]
+INFO: [Synth 8-6157] synthesizing module 'vga_controller' [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/vga.v:6]
+	Parameter HD bound to: 640 - type: integer 
+	Parameter HF bound to: 16 - type: integer 
+	Parameter HS bound to: 96 - type: integer 
+	Parameter HB bound to: 48 - type: integer 
+	Parameter HT bound to: 800 - type: integer 
+	Parameter VD bound to: 480 - type: integer 
+	Parameter VF bound to: 10 - type: integer 
+	Parameter VS bound to: 2 - type: integer 
+	Parameter VB bound to: 33 - type: integer 
+	Parameter VT bound to: 525 - type: integer 
+	Parameter hsync_default bound to: 1'b1 
+	Parameter vsync_default bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (9#1) [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/vga.v:6]
+WARNING: [Synth 8-3848] Net data_out in module/entity top does not have driver. [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/top.v:29]
+WARNING: [Synth 8-3848] Net rx_done in module/entity top does not have driver. [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/top.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'top' (10#1) [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/top.v:4]
+WARNING: [Synth 8-3331] design CollisionWithPlayerDectector has unconnected port clk
+WARNING: [Synth 8-3331] design CollisionWithPlayerDectector has unconnected port rst
+WARNING: [Synth 8-3331] design ball has unconnected port en
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[9]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[8]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[7]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[6]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[5]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[4]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[3]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[2]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[1]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[0]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[9]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[8]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[7]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[6]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[5]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[4]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[3]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[2]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[1]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[0]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeedIsLeft
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeedIsUp
+WARNING: [Synth 8-3331] design top has unconnected port rx
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 763.875 ; gain = 240.957
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 763.875 ; gain = 240.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 763.875 ; gain = 240.957
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/constrs_1/imports/new/eyesight.xdc]
+Finished Parsing XDC File [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/constrs_1/imports/new/eyesight.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/constrs_1/imports/new/eyesight.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 895.555 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 895.555 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 895.555 ; gain = 372.637
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 895.555 ; gain = 372.637
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 895.555 ; gain = 372.637
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Ps2Interface'
+INFO: [Synth 8-5546] ROM "read_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "load_tx_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ps2_clk_h" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'MouseCtl'
+INFO: [Synth 8-5546] ROM "reset_periodic_check_cnt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "new_event" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/Mouse.v:139]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/Mouse.v:139]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/Mouse.v:44]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/Mouse.v:53]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/ball.v:254]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/ball.v:254]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/ball.v:185]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/ball.v:185]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ball'
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/paddle.v:71]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                00000000000000001 |                            00000
+            rx_down_edge |                00000000000000010 |                            00011
+                rx_clk_l |                00000000000000100 |                            00010
+                rx_clk_h |                00000000000001000 |                            00001
+         rx_error_parity |                00000000000010000 |                            00100
+           rx_data_ready |                00000000000100000 |                            00101
+          tx_force_clk_l |                00000000001000000 |                            00110
+      tx_bring_data_down |                00000000010000000 |                            00111
+          tx_release_clk |                00000000100000000 |                            01000
+ tx_first_wait_down_edge |                00000001000000000 |                            01001
+                tx_clk_l |                00000010000000000 |                            01010
+         tx_wait_up_edge |                00000100000000000 |                            01011
+tx_wait_up_edge_before_ack |                00001000000000000 |                            01101
+             tx_wait_ack |                00010000000000000 |                            01110
+         tx_received_ack |                00100000000000000 |                            01111
+         tx_error_no_ack |                01000000000000000 |                            10000
+                tx_clk_h |                10000000000000000 |                            01100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Ps2Interface'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   reset | 0000000000000000000000000000000000001 |                           000000
+          reset_wait_ack | 0000000000000000000000000000000000010 |                           000001
+reset_wait_bat_completion | 0000000000000000000000000000000000100 |                           000010
+           reset_wait_id | 0000000000000000000000000000000001000 |                           000011
+reset_set_sample_rate_200 | 0000000000000000000000000000000010000 |                           000100
+reset_set_sample_rate_200_wait_ack | 0000000000000000000000000000000100000 |                           000101
+reset_send_sample_rate_200 | 0000000000000000000000000000001000000 |                           000110
+reset_send_sample_rate_200_wait_ack | 0000000000000000000000000000010000000 |                           000111
+reset_set_sample_rate_100 | 0000000000000000000000000000100000000 |                           001000
+reset_set_sample_rate_100_wait_ack | 0000000000000000000000000001000000000 |                           001001
+reset_send_sample_rate_100 | 0000000000000000000000000010000000000 |                           001010
+reset_send_sample_rate_100_wait_ack | 0000000000000000000000000100000000000 |                           001011
+reset_set_sample_rate_80 | 0000000000000000000000001000000000000 |                           001100
+reset_set_sample_rate_80_wait_ack | 0000000000000000000000010000000000000 |                           001101
+reset_send_sample_rate_80 | 0000000000000000000000100000000000000 |                           001110
+reset_send_sample_rate_80_wait_ack | 0000000000000000000001000000000000000 |                           001111
+           reset_read_id | 0000000000000000000010000000000000000 |                           010000
+  reset_read_id_wait_ack | 0000000000000000000100000000000000000 |                           010001
+   reset_read_id_wait_id | 0000000000000000001000000000000000000 |                           010010
+    reset_set_resolution | 0000000000000000010000000000000000000 |                           010011
+reset_set_resolution_wait_ack | 0000000000000000100000000000000000000 |                           010100
+   reset_send_resolution | 0000000000000001000000000000000000000 |                           010101
+reset_send_resolution_wait_ack | 0000000000000010000000000000000000000 |                           010110
+reset_set_sample_rate_40 | 0000000000000100000000000000000000000 |                           010111
+reset_set_sample_rate_40_wait_ack | 0000000000001000000000000000000000000 |                           011000
+reset_send_sample_rate_40 | 0000000000010000000000000000000000000 |                           011001
+reset_send_sample_rate_40_wait_ack | 0000000000100000000000000000000000000 |                           011010
+  reset_enable_reporting | 0000000001000000000000000000000000000 |                           011011
+reset_enable_reporting_wait_ack | 0000000010000000000000000000000000000 |                           011100
+             read_byte_1 | 0000000100000000000000000000000000000 |                           011101
+             read_byte_2 | 0000001000000000000000000000000000000 |                           011110
+             read_byte_3 | 0000010000000000000000000000000000000 |                           011111
+             read_byte_4 | 0000100000000000000000000000000000000 |                           100000
+          mark_new_event | 0001000000000000000000000000000000000 |                           100100
+           check_read_id | 0010000000000000000000000000000000000 |                           100001
+  check_read_id_wait_ack | 0100000000000000000000000000000000000 |                           100010
+   check_read_id_wait_id | 1000000000000000000000000000000000000 |                           100011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'MouseCtl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   RESET |                               00 |                               01
+                    MOVE |                               01 |                               10
+               COLLISION |                               10 |                               11
+                  iSTATE |                               11 |                               00
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ball'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 895.555 ; gain = 372.637
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 4     
+	   2 Input     11 Bit       Adders := 3     
+	   3 Input     10 Bit       Adders := 12    
+	   2 Input     10 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               26 Bit    Registers := 1     
+	               24 Bit    Registers := 1     
+	               12 Bit    Registers := 6     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 10    
+	                8 Bit    Registers := 6     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 41    
++---Muxes : 
+	  37 Input     37 Bit        Muxes := 1     
+	   2 Input     37 Bit        Muxes := 69    
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 1     
+	  17 Input     17 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 18    
+	   2 Input     12 Bit        Muxes := 10    
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 44    
+	   2 Input      9 Bit        Muxes := 3     
+	  37 Input      8 Bit        Muxes := 3     
+	   2 Input      8 Bit        Muxes := 1     
+	  37 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 9     
+	   4 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+	  17 Input      1 Bit        Muxes := 4     
+	  37 Input      1 Bit        Muxes := 20    
+	   6 Input      1 Bit        Muxes := 7     
+	   5 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module top 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 9     
+Module Ps2Interface 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 3     
++---Registers : 
+	               11 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	  17 Input     17 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 18    
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	  17 Input      1 Bit        Muxes := 4     
+Module MouseCtl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 4     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               26 Bit    Registers := 1     
+	               24 Bit    Registers := 1     
+	               12 Bit    Registers := 6     
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	  37 Input     37 Bit        Muxes := 1     
+	   2 Input     37 Bit        Muxes := 69    
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 10    
+	   2 Input      9 Bit        Muxes := 2     
+	  37 Input      8 Bit        Muxes := 3     
+	  37 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	  37 Input      1 Bit        Muxes := 20    
+Module SquareDisplay 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     10 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 4     
+Module mouse 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 4     
+Module CollisionWithPlayerDectector 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     10 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 4     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module ball 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 4     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 4     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 29    
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 7     
+Module ble_paddle 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+Module vga_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3936] Found unconnected internal register 'MC1/xpos_reg' and it is trimmed from '12' to '10' bits. [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/MouseCtl.vhd:428]
+WARNING: [Synth 8-3936] Found unconnected internal register 'MC1/ypos_reg' and it is trimmed from '12' to '10' bits. [C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/sources_1/imports/sources_1/file/MouseCtl.vhd:431]
+WARNING: [Synth 8-3331] design ble_paddle has unconnected port v_cnt[0]
+WARNING: [Synth 8-3331] design ble_paddle has unconnected port h_cnt[0]
+WARNING: [Synth 8-3331] design ball has unconnected port en
+WARNING: [Synth 8-3331] design ball has unconnected port h_cnt[0]
+WARNING: [Synth 8-3331] design ball has unconnected port v_cnt[0]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[9]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[8]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[7]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[6]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[5]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[4]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[3]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[2]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[1]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeed[0]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[9]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[8]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[7]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[6]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[5]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[4]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[3]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[2]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[1]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeed[0]
+WARNING: [Synth 8-3331] design ball has unconnected port collisionHSpeedIsLeft
+WARNING: [Synth 8-3331] design ball has unconnected port collisionVSpeedIsUp
+WARNING: [Synth 8-3331] design mouse has unconnected port h_cntr_reg[0]
+WARNING: [Synth 8-3331] design mouse has unconnected port v_cntr_reg[0]
+WARNING: [Synth 8-3331] design top has unconnected port rx
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/x_max_reg[0]' (FDSE) to 'mouse_inst/MC1/x_max_reg[10]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/x_max_reg[1]' (FDSE) to 'mouse_inst/MC1/x_max_reg[10]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/x_max_reg[2]' (FDSE) to 'mouse_inst/MC1/x_max_reg[10]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/x_max_reg[3]' (FDSE) to 'mouse_inst/MC1/x_max_reg[10]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/x_max_reg[4]' (FDSE) to 'mouse_inst/MC1/x_max_reg[10]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/x_max_reg[5]' (FDSE) to 'mouse_inst/MC1/x_max_reg[10]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/x_max_reg[6]' (FDSE) to 'mouse_inst/MC1/x_max_reg[10]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/x_max_reg[7]' (FDSE) to 'mouse_inst/MC1/x_max_reg[10]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/x_max_reg[8]' (FDRE) to 'mouse_inst/MC1/x_max_reg[11]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/x_max_reg[9]' (FDRE) to 'mouse_inst/MC1/x_max_reg[11]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/x_max_reg[10]' (FDSE) to 'mouse_inst/MC1/y_max_reg[0]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/x_max_reg[11]' (FDRE) to 'mouse_inst/MC1/y_max_reg[10]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/y_max_reg[0]' (FDSE) to 'mouse_inst/MC1/y_max_reg[1]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/y_max_reg[1]' (FDSE) to 'mouse_inst/MC1/y_max_reg[2]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/y_max_reg[2]' (FDSE) to 'mouse_inst/MC1/y_max_reg[3]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/y_max_reg[3]' (FDSE) to 'mouse_inst/MC1/y_max_reg[4]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/y_max_reg[4]' (FDSE) to 'mouse_inst/MC1/y_max_reg[5]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/y_max_reg[5]' (FDSE) to 'mouse_inst/MC1/y_max_reg[6]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/y_max_reg[6]' (FDSE) to 'mouse_inst/MC1/y_max_reg[7]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/y_max_reg[7]' (FDSE) to 'mouse_inst/MC1/y_max_reg[8]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/y_max_reg[8]' (FDSE) to 'mouse_inst/MC1/y_max_reg[9]'
+INFO: [Synth 8-3886] merging instance 'mouse_inst/MC1/y_max_reg[10]' (FDRE) to 'mouse_inst/MC1/y_max_reg[11]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mouse_inst/MC1/y_max_reg[11] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ball_inst/h_speed_reg[0] )
+INFO: [Synth 8-3886] merging instance 'ball_inst/h_speed_reg[2]' (FDCE) to 'ball_inst/h_speed_reg[3]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/h_speed_reg[3]' (FDCE) to 'ball_inst/h_speed_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/h_speed_reg[4]' (FDCE) to 'ball_inst/h_speed_reg[5]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/h_speed_reg[5]' (FDCE) to 'ball_inst/h_speed_reg[6]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/h_speed_reg[6]' (FDCE) to 'ball_inst/h_speed_reg[7]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/h_speed_reg[7]' (FDCE) to 'ball_inst/h_speed_reg[8]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/h_speed_reg[8]' (FDCE) to 'ball_inst/h_speed_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/h_speed_reg[9]' (FDCE) to 'ball_inst/v_speed_reg[1]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/v_speed_reg[1]' (FDCE) to 'ball_inst/v_speed_reg[2]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/v_speed_reg[2]' (FDCE) to 'ball_inst/v_speed_reg[3]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/v_speed_reg[3]' (FDCE) to 'ball_inst/v_speed_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/v_speed_reg[4]' (FDCE) to 'ball_inst/v_speed_reg[5]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/v_speed_reg[5]' (FDCE) to 'ball_inst/v_speed_reg[6]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/v_speed_reg[6]' (FDCE) to 'ball_inst/v_speed_reg[7]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/v_speed_reg[7]' (FDCE) to 'ball_inst/v_speed_reg[8]'
+INFO: [Synth 8-3886] merging instance 'ball_inst/v_speed_reg[8]' (FDCE) to 'ball_inst/v_speed_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ball_inst/v_speed_reg[9] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 895.555 ; gain = 372.637
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 895.555 ; gain = 372.637
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 895.555 ; gain = 372.637
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mouse_inst/MC1/y_pos_reg[11] )
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 897.293 ; gain = 374.375
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5365] Flop mouse_inst/MC1/Inst_Ps2Interface/ps2_clk_h_reg is being inverted and renamed to mouse_inst/MC1/Inst_Ps2Interface/ps2_clk_h_reg_inv.
+INFO: [Synth 8-5365] Flop mouse_inst/MC1/Inst_Ps2Interface/ps2_data_h_reg is being inverted and renamed to mouse_inst/MC1/Inst_Ps2Interface/ps2_data_h_reg_inv.
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 903.078 ; gain = 380.160
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 903.078 ; gain = 380.160
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 903.078 ; gain = 380.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 903.078 ; gain = 380.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 903.078 ; gain = 380.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 903.078 ; gain = 380.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    91|
+|3     |LUT1   |    46|
+|4     |LUT2   |   139|
+|5     |LUT3   |   131|
+|6     |LUT4   |   130|
+|7     |LUT5   |   116|
+|8     |LUT6   |   126|
+|9     |FDCE   |    23|
+|10    |FDPE   |     9|
+|11    |FDRE   |   297|
+|12    |FDSE   |     2|
+|13    |IBUF   |     2|
+|14    |IOBUF  |     2|
+|15    |OBUF   |    14|
++------+-------+------+
+
+Report Instance Areas: 
++------+------------------------+-----------------------------+------+
+|      |Instance                |Module                       |Cells |
++------+------------------------+-----------------------------+------+
+|1     |top                     |                             |  1130|
+|2     |  ball_inst             |ball                         |   264|
+|3     |    inst_1              |CollisionWithPlayerDectector |   153|
+|4     |  clk_wiz_0_inst        |clock_divisor                |    24|
+|5     |  mouse_inst            |mouse                        |   669|
+|6     |    MC1                 |MouseCtl                     |   653|
+|7     |      Inst_Ps2Interface |Ps2Interface                 |   269|
+|8     |    SQ1                 |SquareDisplay                |    16|
+|9     |  vga_inst              |vga_controller               |   153|
++------+------------------------+-----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 903.078 ; gain = 380.160
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 32 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 903.078 ; gain = 248.480
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 903.078 ; gain = 380.160
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 93 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 919.152 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+101 Infos, 68 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 919.152 ; gain = 624.711
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 919.152 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Jan  4 08:21:34 2020...
