@@ -60,7 +60,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -71,12 +70,12 @@ set rc [catch {
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.cache/wt [current_project]
-  set_property parent.project_path C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.xpr [current_project]
-  set_property ip_output_repo C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/user/Desktop/hardware/final_I_meant_it.cache/wt [current_project]
+  set_property parent.project_path C:/Users/user/Desktop/hardware/final_I_meant_it.xpr [current_project]
+  set_property ip_output_repo C:/Users/user/Desktop/hardware/final_I_meant_it.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.runs/synth_1/top.dcp
-  read_xdc C:/Users/User/Desktop/final_I_meant_it/final_I_meant_it.srcs/constrs_1/imports/new/eyesight.xdc
+  add_files -quiet C:/Users/user/Desktop/hardware/final_I_meant_it.runs/synth_1/top.dcp
+  read_xdc C:/Users/user/Desktop/hardware/final_I_meant_it.srcs/constrs_1/imports/new/eyesight.xdc
   link_design -top top -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]

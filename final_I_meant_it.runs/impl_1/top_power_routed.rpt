@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Sat Jan  4 08:22:53 2020
-| Host             : LAPTOP-1LUN3BSP running 64-bit major release  (build 9200)
+| Date             : Tue Jan  7 12:00:31 2020
+| Host             : PC-28 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
 | Device           : xc7a35tcpg236-1
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.078        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.006        |
+| Dynamic (W)              | 0.007        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |     1120 |       --- |             --- |
-|   LUT as Logic |     0.002 |      500 |     20800 |            2.40 |
-|   CARRY4       |    <0.001 |       91 |      8150 |            1.12 |
-|   Register     |    <0.001 |      331 |     41600 |            0.80 |
+| Slice Logic    |     0.002 |     1315 |       --- |             --- |
+|   LUT as Logic |     0.002 |      600 |     20800 |            2.88 |
+|   CARRY4       |    <0.001 |      101 |      8150 |            1.24 |
+|   Register     |    <0.001 |      371 |     41600 |            0.89 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |     0.002 |      805 |       --- |             --- |
+|   Others       |     0.000 |       16 |       --- |             --- |
+| Signals        |     0.002 |      909 |       --- |             --- |
 | I/O            |    <0.001 |       18 |       106 |           16.98 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.078 |          |           |                 |
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.015 |       0.006 |      0.010 |
+| Vccint    |       1.000 |     0.016 |       0.006 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -141,8 +141,9 @@ Table of Contents
 +--------------+-----------+
 | Name         | Power (W) |
 +--------------+-----------+
-| top          |     0.006 |
+| top          |     0.007 |
 |   ball_inst  |     0.002 |
+|     inst_1   |     0.001 |
 |   mouse_inst |     0.003 |
 |     MC1      |     0.003 |
 +--------------+-----------+

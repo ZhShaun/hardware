@@ -29,6 +29,8 @@ module ball (clk, rst, en, h_cnt, v_cnt, valid, pixel, h, v,
 	reg [9:0] h, v; // ball position
 	reg [9:0] h_speed, v_speed, next_h_speed, next_v_speed;
 	reg [2:0] timer, next_timer;
+	reg flag, next_flag; // ensure only collide once in the collsion area 
+
 	CollisionWithPlayerDectector  inst_1 (
 		.clk(clk), 
 		.rst(rst),
@@ -72,6 +74,7 @@ module ball (clk, rst, en, h_cnt, v_cnt, valid, pixel, h, v,
 			leftOrRight <= 1;
 			upOrDown <= 1;
 			timer <= 0;
+			flag <= 0;
 		end 
 		else begin
 		    timer <= next_timer;
@@ -83,6 +86,7 @@ module ball (clk, rst, en, h_cnt, v_cnt, valid, pixel, h, v,
 			edgeCollided <= nextEdgeCollided;
 			leftOrRight <= nextLeftOrRight;
 			upOrDown <= nextUpOrDown;
+			flag <= next_flag;
 		end 
 	end 
 		
@@ -91,7 +95,7 @@ module ball (clk, rst, en, h_cnt, v_cnt, valid, pixel, h, v,
 		case (state) 
 			RESET: next_state = MOVE;
 			MOVE: begin
-				if (|edgeCollided | hasCollision)
+				if (|edgeCollided || hasCollision && !flag)
 					next_state = COLLISION;
 			end
 			COLLISION: begin
@@ -111,6 +115,7 @@ module ball (clk, rst, en, h_cnt, v_cnt, valid, pixel, h, v,
 		nextUpOrDown = upOrDown;
 		next_h_speed = h_speed;
 		next_v_speed = v_speed;
+		next_flag = flag;
 		case (state)
 			RESET: begin
 				nextEdgeCollided = 0;
@@ -125,6 +130,10 @@ module ball (clk, rst, en, h_cnt, v_cnt, valid, pixel, h, v,
 				else if (next_v <= 3)	nextEdgeCollided = `UP;
 				else if (next_v >= 236)	nextEdgeCollided = `DOWN;
 				else nextEdgeCollided = 0;
+
+				if (!hasCollision) begin
+					next_flag = 0;
+				end 
 			end
 			COLLISION: begin
 				if (|edgeCollided) begin
@@ -136,40 +145,75 @@ module ball (clk, rst, en, h_cnt, v_cnt, valid, pixel, h, v,
 					endcase 
 				end 
 				else if (hasCollision) begin
-					case (collisionSide)
-						`LEFT: begin
-							nextLeftOrRight = 0;
-							if (collisionHSpeedIsLeft) 
-								next_h_speed = h_speed;// + collisionHSpeed;
-							else 
-								next_h_speed = h_speed;// - collisionHSpeed;
-						end 
-						`RIGHT: begin
-							nextLeftOrRight = 1;
-							if (collisionHSpeedIsLeft)
-								next_h_speed = h_speed;// - collisionHSpeed;
-							else 
-								next_h_speed = h_speed;// + collisionHSpeed;
-						end 
-						`UP: begin
-							nextUpOrDown = 0;
-							if (collisionVSpeedIsUp) 
-								next_v_speed = v_speed;// + collisionVSpeed;
-							else 
-								next_v_speed = v_speed;// - collisionVSpeed;
-						end 
-						`DOWN: begin
-							nextUpOrDown = 1;
-							if (collisionVSpeedIsUp)
-								next_v_speed = v_speed;// - collisionVSpeed;
-							else 
-								next_v_speed = v_speed;// + collisionVSpeed;
-						end
-						`CORNER: begin
-							nextUpOrDown = ~upOrDown;
-							nextLeftOrRight = ~leftOrRight;
-						end 
-					endcase 
+					if (!flag) begin
+						next_flag = 1;
+						case (collisionSide)
+							`LEFT: begin
+								nextLeftOrRight = 0;
+								if (collisionHSpeedIsLeft) begin 
+									if (collisionHSpeed > 3)
+										next_h_speed = h_speed + 2;
+									else 
+										next_h_speed = h_speed;
+								end 
+								else begin
+									if (collisionHSpeed > 3)
+										next_h_speed = h_speed - 2;
+									else 
+										next_h_speed = h_speed;
+								end 
+							end 
+							`RIGHT: begin
+								nextLeftOrRight = 1;
+								if (collisionHSpeedIsLeft) begin
+									if (collisionHSpeed > 3)
+										next_h_speed = h_speed - 2;
+									else 
+										next_h_speed = h_speed;
+								end 
+								else begin 
+									if (collisionHSpeed > 3)
+										next_h_speed = h_speed + 2;
+									else 
+										next_h_speed = h_speed;
+								end 
+							end 
+							`UP: begin
+								nextUpOrDown = 0;
+								if (collisionVSpeedIsUp) begin
+									if (collisionVSpeed > 3)
+										next_v_speed = v_speed + 2;
+									else 
+										next_v_speed = v_speed;
+								end 
+								else begin
+									if (collisionVSpeed > 3)
+										next_v_speed = v_speed - 2;
+									else 
+										next_v_speed = v_speed;
+								end 
+							end 
+							`DOWN: begin
+								nextUpOrDown = 1;
+								if (collisionVSpeedIsUp) begin 
+									if (collisionVSpeed > 3)
+										next_v_speed = v_speed - 2;
+									else 
+										next_v_speed = v_speed;
+								end 
+								else begin
+									if (collisionVSpeed > 3)
+										next_v_speed = v_speed + 2;
+									else 
+										next_v_speed = v_speed;
+								end 
+							end
+							`CORNER: begin
+								nextUpOrDown = ~upOrDown;
+								nextLeftOrRight = ~leftOrRight;
+							end 
+						endcase 
+					end 
 				end 
 				collisionHandleDone = 1;
 			end 
