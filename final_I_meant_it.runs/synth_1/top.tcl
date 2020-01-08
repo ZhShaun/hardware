@@ -19,6 +19,7 @@ proc create_report { reportName command } {
 }
 set_param chipscope.maxJobs 1
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -35,6 +36,8 @@ read_verilog -library xil_defaultlib {
   C:/Users/user/Desktop/hardware/final_I_meant_it.srcs/sources_1/imports/sources_1/file/ball.v
   C:/Users/user/Desktop/hardware/final_I_meant_it.srcs/sources_1/imports/sources_1/clock_divisor.v
   C:/Users/user/Desktop/hardware/final_I_meant_it.srcs/sources_1/imports/sources_1/paddle.v
+  C:/Users/user/Desktop/hardware/final_I_meant_it.srcs/sources_1/imports/sources_1/score.v
+  C:/Users/user/Desktop/hardware/final_I_meant_it.srcs/sources_1/imports/sources_1/seven_segment.v
   C:/Users/user/Desktop/hardware/final_I_meant_it.srcs/sources_1/imports/sources_1/vga.v
   C:/Users/user/Desktop/hardware/final_I_meant_it.srcs/sources_1/imports/sources_1/top.v
 }

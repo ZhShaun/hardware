@@ -31,6 +31,9 @@ module ball (clk, rst, en, h_cnt, v_cnt, valid, pixel, h, v,
 	reg [2:0] timer, next_timer;
 	reg flag, next_flag; // ensure only collide once in the collsion area 
 
+	// for scoring system
+	assign restart_done = rst;
+
 	CollisionWithPlayerDectector  inst_1 (
 		.clk(clk), 
 		.rst(rst),
@@ -262,8 +265,8 @@ module CollisionWithPlayerDectector (
 	wire h_touch, v_touch;
 	
 	assign hasCollision = (collisionSide == 0) ? 0 : 1;
-	assign h_close = abs(ball_h, player_h) <= 20;
-	assign v_close = abs(ball_v, player_v) <= 20;
+	assign h_close = abs(ball_h, player_h) <= 18;
+	assign v_close = abs(ball_v, player_v) <= 18;
 	assign h_touch = abs(ball_h, player_h) <= 11;
 	assign v_touch = abs(ball_v, player_v) <= 11;
 	

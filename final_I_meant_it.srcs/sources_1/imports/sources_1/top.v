@@ -11,7 +11,9 @@ module top(
    output reg [3:0] vgaGreen,
    output reg [3:0] vgaBlue,
    output hsync,
-   output vsync
+   output vsync,
+   output [3:0] DIGIT,
+   output [6:0] DISPLAY
     );
 
     wire [11:0] data;
@@ -35,11 +37,17 @@ module top(
     wire [7:0] ble_h, ble_v;
     wire [9:0] ball_h, ball_v;
     reg flag, collision_paddle_isLeft, collision_paddle_isUp;
-    wire clk100, clk18, bleIsLeft, bleIsUp, mouseIsLeft, mouseIsUp, bleValid, mouseValid, ballValid;
+    wire clk100, clk18, clk13, bleIsLeft, bleIsUp, mouseIsLeft, mouseIsUp, bleValid, mouseValid, ballValid;
     wire [9:0] ble_speed_h, ble_speed_v, mouse_speed_h, mouse_speed_v, mouse_h, mouse_v;
     reg  [9:0] collision_paddle_h, collision_paddle_v, collision_paddle_speed_h, collision_paddle_speed_v;
     reg [15:0] tmp_led;
     wire [3:0] mouse_red, mouse_blue, mouse_green;
+
+    // scoring system
+    wire [3:0] p1_score, p2_score;
+    wire game_over, who_win;
+    wire restart_handle_done;
+    wire restart_request;
     
     always @(*) begin
         if (valid) begin
@@ -99,7 +107,7 @@ module top(
     
     ball ball_inst(
        .clk(clk18),
-       .rst(rst),
+       .rst(rst|restart_request),
        .en(1'b1),
        .h_cnt(h_cnt),
        .v_cnt(v_cnt),
@@ -115,6 +123,19 @@ module top(
        .collisionV(collision_paddle_v >> 1)
     );
     
+    score score_inst (
+        .clk(clk18), 
+        .rst(rst),
+        .ball_h(ball_h),
+        .ball_v(ball_v),
+        .restart_handle_done(1),
+        .player_1_score(p1_score),
+        .player_2_score(p2_score),
+        .restart(restart_request),
+        .game_over(game_over),
+        .who_win(who_win)
+    );
+
 
     ble_paddle paddle_inst(
       .clk(clk_22),
@@ -133,13 +154,21 @@ module top(
       .pixel(ble_pixel)
     );
   
+    seven_segment ss (
+        .clk(clk13),
+        .p1_score(p1_score),
+        .p2_score(p2_score),
+        .DIGIT(DIGIT),
+        .DISPLAY(DISPLAY)
+    );
 
 
      clock_divisor clk_wiz_0_inst(
       .clk(clk),
       .clk1(clk_25MHz),
       .clk22(clk_22),
-      .clk18(clk18)
+      .clk18(clk18),
+      .clk13(clk13)
     );
     
 //    clk_wiz_0 u_clk(

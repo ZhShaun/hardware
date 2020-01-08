@@ -21,8 +21,8 @@ module score (
     scoreboard board (
         .clk(clk), 
         .rst(rst),
-        .en(~restart), // restart == 1 means need to restart, don't score  
-        .player_1_win(player_2_win),
+        .en(1), // restart == 1 means need to restart, don't score  
+        .player_1_win(player_1_win),
         .player_2_win(player_2_win),
         .player_1_score(player_1_score),
         .player_2_score(player_2_score),
@@ -42,15 +42,15 @@ module score (
     // determine who wins, restart the game if handled 
     always @(*) begin
         {player_1_win, player_2_win} = 0;
-        next_restart = restart;
+        next_restart = 0;
 
         if (!restart) begin
             if (ball_h <= `GATE_WIDTH && is_v_inbound(ball_v)) begin
-                player_1_win = 1;
+                player_2_win = 1;
                 next_restart = 1;
             end
             else if (ball_h >= 320-`GATE_WIDTH && is_v_inbound(ball_v)) begin
-                player_2_win = 1;
+                player_1_win = 1;
                 next_restart = 1; 
             end
         end
@@ -92,7 +92,7 @@ module scoreboard (
             player_2_score <= 0;
             who_win <= 0;
         end 
-        else if (en) begin
+        else if (en && !game_over) begin
             player_1_score <= next_player_1_score;
             player_2_score <= next_player_2_score;
             who_win <= next_who_win;
@@ -116,7 +116,7 @@ module scoreboard (
 
         if (player_1_score >= 7 || player_2_score >= 7) begin
             game_over = 1;
-            if (player_2_score >= 7)
+            if (player_1_score >= 7)
                 next_who_win = 0;
             else 
                 next_who_win = 1;
